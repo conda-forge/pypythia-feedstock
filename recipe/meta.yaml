@@ -28,8 +28,8 @@ requirements:
     - biopython
     - scikit-learn >=1.0
     - lightgbm >=3.3
-    - shap >= 0.41
-    - matplotlib
+    - shap >=0.41
+    - matplotlib-base
     - __unix
 
 test:
