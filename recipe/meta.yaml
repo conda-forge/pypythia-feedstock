@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/tschuelia/PyPythia/archive/v{{ version }}.tar.gz
+  url: https://github.com/tschuelia/PyPythia/archive/{{ version }}.tar.gz
   sha256: 363a1cdfc7a7b47c76ac2cc1ca4ca7e369bd71523b7f467b5613b52529116aae
 
 build:
@@ -28,11 +28,17 @@ requirements:
     - biopython
     - scikit-learn >=1.0
     - lightgbm >=3.3
+    - shap >= 0.41
+    - matplotlib
     - __unix
 
 test:
   imports:
     - pypythia
+    - pypythia.msa
+    - pypythia.prediction
+    - pypythia.predictor
+    - pypythia.raxmlng
   commands:
     - pip check
     - pythia --help
