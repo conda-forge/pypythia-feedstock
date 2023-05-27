@@ -30,7 +30,7 @@ requirements:
     - lightgbm >=3.3
     - numpy
     - shap >=0.41
-    - matplotlib
+    - matplotlib-base
     - __unix
 
 test:
