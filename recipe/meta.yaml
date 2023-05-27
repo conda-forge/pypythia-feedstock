@@ -28,11 +28,18 @@ requirements:
     - biopython
     - scikit-learn >=1.0
     - lightgbm >=3.3
+    - numpy
+    - shap >=0.41
+    - matplotlib
     - __unix
 
 test:
   imports:
     - pypythia
+    - pypythia.msa
+    - pypythia.raxmlng
+    - pypythia.prediction
+    - pypythia.predictor
   commands:
     - pip check
     - pythia --help
