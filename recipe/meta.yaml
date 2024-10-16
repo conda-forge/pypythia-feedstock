@@ -1,5 +1,5 @@
 {% set name = "PyPythia" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/tschuelia/PyPythia/archive/{{ version }}.tar.gz
-  sha256: 342e3262e00eaa3386ee3c363a71d3244df2a51a99d865dd419d8014a3f4ad72
+  sha256: 8acadd8073066919b4841d631f5a2d7f57a19e4c68e77a8a4ac9aa296c5355fe
 
 build:
   entry_points:
