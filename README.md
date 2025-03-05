@@ -3,9 +3,9 @@ About pypythia-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pypythia-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/tschuelia/PyPythia
 
-Package license: GPL-2.0-or-later
+
+Package license: GPL-3.0
 
 Summary: Lightweight python library for predicting the difficulty of alignments in phylogenetics
 
@@ -27,7 +27,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pypythia-green.svg)](https://anaconda.org/conda-forge/pypythia) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pypythia.svg)](https://anaconda.org/conda-forge/pypythia) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pypythia.svg)](https://anaconda.org/conda-forge/pypythia) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pypythia.svg)](https://anaconda.org/conda-forge/pypythia) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pythiaphylopredictor-green.svg)](https://anaconda.org/conda-forge/pythiaphylopredictor) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pythiaphylopredictor.svg)](https://anaconda.org/conda-forge/pythiaphylopredictor) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pythiaphylopredictor.svg)](https://anaconda.org/conda-forge/pythiaphylopredictor) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pythiaphylopredictor.svg)](https://anaconda.org/conda-forge/pythiaphylopredictor) |
 
 Installing pypythia
 ===================
@@ -39,41 +39,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pypythia` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pythiaphylopredictor` can be installed with `conda`:
 
 ```
-conda install pypythia
-```
-
-or with `mamba`:
-
-```
-mamba install pypythia
-```
-
-It is possible to list all of the versions of `pypythia` available on your platform with `conda`:
-
-```
-conda search pypythia --channel conda-forge
+conda install pythiaphylopredictor
 ```
 
 or with `mamba`:
 
 ```
-mamba search pypythia --channel conda-forge
+mamba install pythiaphylopredictor
+```
+
+It is possible to list all of the versions of `pythiaphylopredictor` available on your platform with `conda`:
+
+```
+conda search pythiaphylopredictor --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search pythiaphylopredictor --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search pypythia --channel conda-forge
+mamba repoquery search pythiaphylopredictor --channel conda-forge
 
-# List packages depending on `pypythia`:
-mamba repoquery whoneeds pypythia --channel conda-forge
+# List packages depending on `pythiaphylopredictor`:
+mamba repoquery whoneeds pythiaphylopredictor --channel conda-forge
 
-# List dependencies of `pypythia`:
-mamba repoquery depends pypythia --channel conda-forge
+# List dependencies of `pythiaphylopredictor`:
+mamba repoquery depends pythiaphylopredictor --channel conda-forge
 ```
 
 
