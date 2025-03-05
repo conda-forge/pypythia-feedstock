@@ -3,9 +3,9 @@ About pypythia-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pypythia-feedstock/blob/main/LICENSE.txt)
 
+Home: https://github.com/tschuelia/PyPythia
 
-
-Package license: GPL-3.0
+Package license: GPL-2.0-or-later
 
 Summary: Lightweight python library for predicting the difficulty of alignments in phylogenetics
 
