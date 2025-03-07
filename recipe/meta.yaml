@@ -1,36 +1,35 @@
-{% set name = "PyPythia" %}
-{% set version = "1.2.1" %}
+{% set name = "PythiaPhyloPredictor" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/tschuelia/PyPythia/archive/{{ version }}.tar.gz
-  sha256: 8acadd8073066919b4841d631f5a2d7f57a19e4c68e77a8a4ac9aa296c5355fe
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pythiaphylopredictor-{{ version }}.tar.gz
+  sha256: 7449450ac27ec783ad103392035de5725e6fa54c65ec655c14b4d4734bb88b05
 
 build:
   entry_points:
-    - pythia = pypythia.prediction:main
+    - pythia = pypythia.main:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools
-    - wheel
+    - hatchling
     - pip
   run:
     - python >={{ python_min }}
     - pandas
     - biopython
-    - scikit-learn >=1.0, < 1.3
-    - lightgbm >=3.3, < 4.0.0
-    - numpy
+    - lightgbm >=4.4
+    - numpy >=2.0
     - shap >=0.41
     - matplotlib-base
+    - loguru
     - __unix
 
 test:
@@ -39,7 +38,7 @@ test:
     - pypythia.msa
     - pypythia.raxmlng
     - pypythia.prediction
-    - pypythia.predictor
+    - pypythia.predictor 
   commands:
     - pip check
     - pythia --help
@@ -56,3 +55,4 @@ about:
 extra:
   recipe-maintainers:
     - tschuelia
+  feedstock-name: pypythia
