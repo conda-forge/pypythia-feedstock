@@ -1,0 +1,65 @@
+schema_version: 1
+
+context:
+  version: "2.1.0"
+
+package:
+  name: pythiaphylopredictor
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/p/pythiaphylopredictor/pythiaphylopredictor-${{ version }}.tar.gz
+  sha256: ac3fa982f5869c18c4ff40ce719e6bd694bc9d0dc628bae59131ad7bd9bd11b4
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - pythia = pypythia.main:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }},<3.15
+    - pandas
+    - biopython
+    - lightgbm >=4.4
+    - numpy >=2.0
+    - shap >=0.41
+    - matplotlib-base
+    - loguru
+    - __unix
+
+tests:
+  - python:
+      imports:
+        - pypythia
+        - pypythia.msa
+        - pypythia.raxmlng
+        - pypythia.prediction
+        - pypythia.predictor
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "3.14.*"
+  - script:
+      - pythia --help
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+
+about:
+  homepage: https://github.com/tschuelia/PyPythia
+  summary: Lightweight python library for predicting the difficulty of alignments in phylogenetics
+  license: GPL-3.0-or-later
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - tschuelia
+  feedstock-name: pypythia
